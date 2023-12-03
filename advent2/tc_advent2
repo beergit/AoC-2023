@@ -1,0 +1,26 @@
+#!/usr/bin/ruby
+require_relative 'advent2'
+require 'test/unit'
+class TestAdvent2 < Test::Unit::TestCase
+ 
+TestData_1 = <<EOF
+Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
+Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
+Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
+Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red
+Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green
+EOF
+
+  def setup
+    @test1_1  = [TestData_1, 8]
+    @test2_1  = [TestData_1, 2286]
+  end  
+
+  def test_part1
+    assert_equal(@test1_1[1], Advent2.new(@test1_1[0]).part1)
+  end
+
+  def test_part2
+    assert_equal(@test2_1[1], Advent2.new(@test2_1[0]).part2)
+  end
+end
