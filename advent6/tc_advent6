@@ -1,0 +1,23 @@
+#!/usr/bin/ruby
+require_relative 'advent6'
+require 'test/unit'
+class TestAdvent6 < Test::Unit::TestCase
+
+TestData_1 = <<EOF
+Time:      7  15   30
+Distance:  9  40  200
+EOF
+
+  def setup
+    @test1_1  = [TestData_1, 288]
+    @test2_1  = [TestData_1, 71503]
+  end  
+
+  def test_part1
+    assert_equal(@test1_1[1], Advent6.new(@test1_1[0]).part1)
+  end
+
+  def test_part2
+    assert_equal(@test2_1[1], Advent6.new(@test2_1[0]).part2)
+  end
+end

@@ -1,0 +1,5 @@
+#!/usr/bin/ruby
+require_relative "advent6"
+raise "Usage: solve <puzzle-data>" if  ARGV.empty?
+puts "Part1: #{Advent6.new(File.new(ARGV.first).read).part1}"
+puts "Part2: #{Advent6.new(File.new(ARGV.first).read).part2}"
