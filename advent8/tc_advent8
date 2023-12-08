@@ -1,0 +1,53 @@
+#!/usr/bin/ruby
+require_relative 'advent8'
+require 'test/unit'
+class TestAdvent8 < Test::Unit::TestCase
+
+TestData_1 = <<EOF
+RL
+
+AAA = (BBB, CCC)
+BBB = (DDD, EEE)
+CCC = (ZZZ, GGG)
+DDD = (DDD, DDD)
+EEE = (EEE, EEE)
+GGG = (GGG, GGG)
+ZZZ = (ZZZ, ZZZ)
+EOF
+
+TestData_2 = <<EOF
+LLR
+
+AAA = (BBB, BBB)
+BBB = (AAA, ZZZ)
+ZZZ = (ZZZ, ZZZ)
+EOF
+
+TestData_3 = <<EOF
+LR
+
+11A = (11B, XXX)
+11B = (XXX, 11Z)
+11Z = (11B, XXX)
+22A = (22B, XXX)
+22B = (22C, 22C)
+22C = (22Z, 22Z)
+22Z = (22B, 22B)
+XXX = (XXX, XXX)
+EOF
+
+  def setup
+    @test1_1  = [TestData_1, 2]
+    @test1_2  = [TestData_2, 6]
+    @test2_1  = [TestData_3, 6]
+  end  
+
+  def test_part1
+    assert_equal(@test1_1[1], Advent8.new(@test1_1[0]).part1)
+    assert_equal(@test1_2[1], Advent8.new(@test1_2[0]).part1)
+  end
+
+  def test_part2
+    assert_equal(@test2_1[1], Advent8.new(@test2_1[0]).part2)
+  end
+end

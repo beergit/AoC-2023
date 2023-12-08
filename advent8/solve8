@@ -1,0 +1,5 @@
+#!/usr/bin/ruby
+require_relative "advent8"
+raise "Usage: solve <input>" if  ARGV.empty?
+puts "Part1: #{Advent8.new(File.new(ARGV.first).read).part1}"
+puts "Part2: #{Advent8.new(File.new(ARGV.first).read).part2}"
